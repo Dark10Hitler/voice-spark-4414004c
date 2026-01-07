@@ -160,17 +160,17 @@ const guideItems = [
 
 export function SeoFooter() {
   return (
-    <section className="mt-12 space-y-8">
+    <section className="mt-10 md:mt-14 space-y-8 md:space-y-10">
       {/* SEO Content Block as Accordion */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="glass-card rounded-3xl p-6 md:p-8"
+        className="glass-card rounded-2xl md:rounded-3xl p-5 md:p-8"
       >
-        <header className="mb-6">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+        <header className="mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
             <span className="text-gradient">Complete Guide to Free Text to Speech for Content Creators</span>
           </h2>
         </header>
@@ -180,12 +180,12 @@ export function SeoFooter() {
             <AccordionItem 
               key={item.id} 
               value={item.id}
-              className="border-border/50 data-[state=open]:bg-accent/30 rounded-lg px-4 -mx-4 transition-colors"
+              className="border-border/40 data-[state=open]:bg-accent/20 rounded-lg px-3 md:px-4 -mx-3 md:-mx-4 transition-colors duration-200"
             >
-              <AccordionTrigger className="text-left text-base hover:no-underline hover:text-primary py-5">
+              <AccordionTrigger className="text-left text-sm md:text-base font-medium">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-sm leading-relaxed prose-wide">
                 {item.content}
               </AccordionContent>
             </AccordionItem>
@@ -194,21 +194,21 @@ export function SeoFooter() {
       </motion.div>
 
       {/* Legal Links */}
-      <div className="glass-card rounded-2xl px-5 py-4">
+      <div className="glass-card rounded-2xl px-5 py-4 md:px-6 md:py-5">
         <div className="flex flex-col gap-3 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>
+          <p className="leading-relaxed">
             Premium Text-to-Speech Pro - The free AI voice generator for content creators.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 md:gap-6">
             <NavLink 
               to="/privacy-policy" 
-              className="text-muted-foreground hover:text-foreground transition-colors story-link"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
             >
               Privacy Policy
             </NavLink>
             <NavLink 
               to="/terms-of-service" 
-              className="text-muted-foreground hover:text-foreground transition-colors story-link"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
             >
               Terms of Service
             </NavLink>
@@ -220,7 +220,7 @@ export function SeoFooter() {
                   (window as any).googlefc.showRevocationMessage?.();
                 }
               }}
-              className="text-muted-foreground hover:text-foreground transition-colors story-link"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
             >
               Cookie Settings
             </button>

@@ -38,6 +38,10 @@ export default {
           2: "hsl(var(--brand-2))",
           glow: "hsl(var(--brand-glow))",
         },
+        telegram: {
+          DEFAULT: "hsl(var(--telegram))",
+          foreground: "hsl(var(--telegram-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -80,6 +84,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      spacing: {
+        18: "4.5rem",
+        22: "5.5rem",
       },
       boxShadow: {
         glow: "var(--shadow-glow)",

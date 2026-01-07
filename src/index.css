@@ -25,6 +25,10 @@
     --brand-2: 262 83% 58%;
     --brand-glow: 239 84% 67%;
 
+    /* Telegram blue for feedback */
+    --telegram: 200 100% 50%;
+    --telegram-foreground: 0 0% 100%;
+
     /* Semantic */
     --primary: var(--brand);
     --primary-foreground: var(--brand-foreground);
@@ -127,12 +131,52 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "Geist", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01" on, "ss02" on, "cv01" on;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+
+  /* Typography hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Optimal reading width */
+  .prose {
+    max-width: 65ch;
+  }
+
+  .prose-wide {
+    max-width: 75ch;
   }
 }
 
@@ -193,7 +237,8 @@
   /* Premium textarea */
   .premium-textarea {
     @apply bg-transparent border-0 resize-none;
-    @apply text-lg leading-relaxed tracking-tight;
+    @apply text-lg leading-relaxed;
+    letter-spacing: -0.011em;
     @apply placeholder:text-muted-foreground/50;
     @apply focus:outline-none focus:ring-0;
   }
@@ -235,12 +280,55 @@
     opacity: 0.6;
   }
 
+  /* Interactive elements - smooth hover */
+  .interactive-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .interactive-hover:hover {
+    @apply transform -translate-y-0.5;
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Telegram feedback button */
+  .feedback-button {
+    background: hsl(var(--telegram));
+    color: hsl(var(--telegram-foreground));
+    box-shadow: 0 4px 14px hsl(var(--telegram) / 0.4);
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .feedback-button:hover {
+    box-shadow: 0 6px 20px hsl(var(--telegram) / 0.5);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .feedback-button:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Consistent spacing utility */
+  .section-spacing {
+    @apply py-12 md:py-16;
+  }
+
+  .content-spacing {
+    @apply space-y-6 md:space-y-8;
+  }
+
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
-    .motion-safe\:animate-breath,
-    .motion-safe\:animate-float,
-    .motion-safe\:animate-shimmer {
-      animation: none !important;
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 }
