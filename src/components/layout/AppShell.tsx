@@ -2,7 +2,6 @@ import { ReactNode, useEffect, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "@/components/NavLink";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import { AdSlot } from "@/components/ads/AdSlot";
 import { cn } from "@/lib/utils";
 
 export function AppShell({ children, className }: { children: ReactNode; className?: string }) {
@@ -75,7 +74,6 @@ export function AppShell({ children, className }: { children: ReactNode; classNa
               </div>
             </div>
 
-            <AdSlot slotId="HEADER_LEADERBOARD" label="Sponsored" className="w-full" sizeHint="728×90" />
           </motion.div>
         </div>
       </header>

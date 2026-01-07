@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import { NavLink } from "@/components/NavLink";
-import { AdSlot } from "@/components/ads/AdSlot";
 
 export function SeoFooter() {
   return (
     <section className="mt-12 space-y-8">
-      {/* Bottom Ad Slot */}
-      <AdSlot slotId="BOTTOM_RESPONSIVE" label="Sponsored" sizeHint="Responsive" />
-
-      {/* SEO Content Block - approximately 1000 words */}
+      {/* SEO Content Block */}
       <motion.article
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
