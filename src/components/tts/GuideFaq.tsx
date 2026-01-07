@@ -193,19 +193,19 @@ const faqItems = [
 
 export function GuideFaq() {
   return (
-    <section aria-label="Guide and FAQ" className="mt-8">
+    <section aria-label="Guide and FAQ" className="mt-10 md:mt-12">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="glass-card rounded-3xl p-6 md:p-8"
+        className="glass-card rounded-2xl md:rounded-3xl p-5 md:p-8"
       >
-        <header className="mb-6">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+        <header className="mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
             <span className="text-gradient">Guide & FAQ: Free Text to Speech for TikTok</span>
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 md:mt-3 text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
             Learn how to turn scripts into high-retention voiceovers with a voice generator with download — optimized for
             TikTok, YouTube Shorts, and Instagram Reels.
           </p>
@@ -216,12 +216,12 @@ export function GuideFaq() {
             <AccordionItem 
               key={item.id} 
               value={item.id}
-              className="border-border/50 data-[state=open]:bg-accent/30 rounded-lg px-4 -mx-4 transition-colors"
+              className="border-border/40 data-[state=open]:bg-accent/20 rounded-lg px-3 md:px-4 -mx-3 md:-mx-4 transition-colors duration-200"
             >
-              <AccordionTrigger className="text-left text-base hover:no-underline hover:text-primary py-5">
+              <AccordionTrigger className="text-left text-sm md:text-base font-medium">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-sm leading-relaxed prose-wide">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
