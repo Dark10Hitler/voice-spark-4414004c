@@ -193,13 +193,13 @@ export function SeoFooter() {
         </Accordion>
       </motion.div>
 
-      {/* Legal Links */}
-      <div className="glass-card rounded-2xl px-5 py-4 md:px-6 md:py-5">
-        <div className="flex flex-col gap-3 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+      {/* Footer Links */}
+      <div className="glass-card rounded-2xl px-5 py-5 md:px-6 md:py-6">
+        <div className="flex flex-col gap-4 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p className="leading-relaxed">
-            Premium Text-to-Speech Pro - The free AI voice generator for content creators.
+            © {new Date().getFullYear()} Premium Text-to-Speech Pro. Free AI voice generator for creators.
           </p>
-          <div className="flex flex-wrap items-center gap-4 md:gap-6">
+          <nav className="flex flex-wrap items-center gap-4 md:gap-6" aria-label="Footer navigation">
             <NavLink 
               to="/privacy-policy" 
               className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
@@ -211,6 +211,18 @@ export function SeoFooter() {
               className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
             >
               Terms of Service
+            </NavLink>
+            <NavLink 
+              to="/about-us" 
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
+            >
+              About Us
+            </NavLink>
+            <NavLink 
+              to="/contact-us" 
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 story-link"
+            >
+              Contact Us
             </NavLink>
             <button
               type="button"
@@ -224,7 +236,7 @@ export function SeoFooter() {
             >
               Cookie Settings
             </button>
-          </div>
+          </nav>
         </div>
       </div>
     </section>

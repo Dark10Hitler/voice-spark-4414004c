@@ -3,6 +3,8 @@ import { AppShell } from "@/components/layout/AppShell";
 import { TtsStudio } from "@/components/tts/TtsStudio";
 import { GuideFaq } from "@/components/tts/GuideFaq";
 import { SeoFooter } from "@/components/seo/SeoFooter";
+import { FeaturedScripts } from "@/components/landing/FeaturedScripts";
+import { ContentSections } from "@/components/landing/ContentSections";
 
 const Index = () => {
   return (
@@ -30,8 +32,14 @@ const Index = () => {
       {/* Main Content */}
       <TtsStudio />
       
+      {/* Featured Scripts Gallery */}
+      <FeaturedScripts />
+      
+      {/* Rich Content Sections */}
+      <ContentSections />
+      
       {/* FAQ Section */}
-      <div className="max-w-studio mx-auto mt-12">
+      <div className="max-w-studio mx-auto mt-12" id="guide-faq">
         <GuideFaq />
       </div>
 
